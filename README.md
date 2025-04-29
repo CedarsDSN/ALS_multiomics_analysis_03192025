@@ -8,7 +8,7 @@ This project aims to identify and characterize ALS molecular subtypes by integra
 AnswerALS contains clinical and omics data (genomics, transcriptomics, epigenomics, proteomics) and is available upon providing information using a research proposal and signing a data user agreement. Data was requested from AnswerALS on March 27th, 2025. Data user agreement was received on 9th April, 2025. Access to data was granted on 28th April, 2025. 
 
 # Analysis
-
+04/29/2025 - The first step in analysis is categorizing the patients into fast, slow, and intermediate progressors, using the clinical data made available. More information about the steps, files, and corresponding columns used for calculating the progression rate is available in the readme file under analysis folder. The file containing the categorization of patients is under analysis, named "ALS_Progression_Rates_Full.csv". The script used to generate this is under scripts folder "calculate_progression.py".
 
 # Results
 
