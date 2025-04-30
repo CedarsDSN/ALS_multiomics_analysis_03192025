@@ -7,7 +7,7 @@ The columns needed to perform the above calculations were in three different tab
 
 It merges visit-wise ALSFRS-R scores, demographic information (including date of birth), and baseline clinical metadata to reconstruct a full disease timeline. The script identifies each patient’s latest ALSFRS-R visit, computes disease duration (from symptom onset to latest visit), and calculates the monthly rate of functional decline.
 
-Patients are then classified into slow, intermediate, or fast progressors based on thresholds from published ALS studies.
+Patients are then classified into slow, intermediate, or fast progressors based on thresholds from the studies shared above.
 
 Additional features:
 
