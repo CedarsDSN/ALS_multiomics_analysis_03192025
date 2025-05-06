@@ -39,6 +39,7 @@ Gene Expression Overview:
 •	Genes retained after filtering: 27,818 genes across 420 samples
 
 1. Fast vs Slow
+   
 •	Min LFC: –3.33
 
 •	Median LFC: –0.0007
