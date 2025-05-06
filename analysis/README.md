@@ -1,6 +1,9 @@
 **Analysis**
 ============
 
+Categorization into progressors
+===============================
+
 Data was requested from AnswerALS on March 27th, 2025. Data user agreement was received on 9th April, 2025. Access to data was granted on 28th April, 2025. On the website, the full clinical metadata was downloaded. This folder contains all clinical data that is available for the ALS patients, Non-ALS MND patients, carriers, and healthy controls. There is no readme available for the files. There is a file "Clinical_Dictionary_v3_2024.csv" which has the columns for each CSV file in the clinical folder. There are a few files outside the folder for which there is no readme available. The first step is to categorize the patients according to how the disease is progressing. The most natural way is to use the ALS progression rate if there is a column in the metadata files. The file "aals_dataportal_datatable.csv" has a column "ALSFRS_R_PROGRESSION_SLOPE", but this column has a lot of missing data. Another way to calculate the ALS progression rate. It is calculated between the maximum ALSFRS-R score (48) and the ALSFRS-R score at diagnosis, divided by disease duration (in months), as shown in two papers ([1](https://www.nature.com/articles/s41467-024-49954-y), [2](https://www.tandfonline.com/doi/full/10.1080/21678421.2023.2297795#d1e419)) among many others. 
 
 The columns needed to perform the above calculations were in three different tables - "aals_dataportal_datatable.csv", "Demographics.csv", and "ALSFRS-R.csv". I wrote a script and uploaded it to the scripts folder, "calculate_progression.py," that can read all tables and add a column that adds the type of progression - fast, slow, or intermediate. It also adds more columns for sanity check.
@@ -24,6 +27,8 @@ Additional features:
 The output file has been uploaded to analysis folder as "ALS_Progression_Rates_Full.csv". The plot showing distributions of the class is uploaded as "Progressor_Class_Counts.png". 
 
 RNA-seq Differential Expression Summary Across ALS Progression Groups
+=====================================================================
+
 Sample Distribution (Progressor Classes):
 
 •	Slow: 163 samples
