@@ -29,6 +29,8 @@ The output file has been uploaded to analysis folder as "ALS_Progression_Rates_F
 RNA-seq Differential Expression Summary Across ALS Progression Groups
 =====================================================================
 
+DESeq2 package was used to conduct differential gene expression between fast, slow and intermediate progressors. Low expressing genes were filtered out such that if the rowsum is less than 10, it is filtered out. Below is the information about the samples and gene expression. 
+
 Sample Distribution (Progressor Classes):
 
 •	Slow: 163 samples
@@ -42,6 +44,8 @@ Gene Expression Overview:
 •	Mean normalized expression: 1,080.7 counts per gene
 
 •	Genes retained after filtering: 27,818 genes across 420 samples
+
+Below is the summary for log2FoldChange between different groups -
 
 1. Fast vs Slow
    
@@ -82,5 +86,5 @@ Gene Expression Overview:
 Key Insight:
 
 The data shows very small fold changes across most genes, with the majority clustered tightly around 0. This suggests minimal transcriptomic differences between progression classes at the gene level.
-I plan to categorize the data into fast and slow progressors only since the intermediate group might be masking clearer differences.
+I plan to categorize the data into fast and slow progressors only, since the intermediate group might be masking clearer differences.
 
