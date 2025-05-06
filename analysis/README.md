@@ -22,3 +22,60 @@ Additional features:
 * Includes optional plotting code to visualize class distributions.
 
 The output file has been uploaded to analysis folder as "ALS_Progression_Rates_Full.csv". The plot showing distributions of the class is uploaded as "Progressor_Class_Counts.png". 
+
+RNA-seq Differential Expression Summary Across ALS Progression Groups
+Sample Distribution (Progressor Classes):
+
+•	Slow: 163 samples
+
+•	Intermediate: 141 samples
+
+•	Fast: 116 samples
+
+Gene Expression Overview:
+
+•	Mean normalized expression: 1,080.7 counts per gene
+
+•	Genes retained after filtering: 27,818 genes across 420 samples
+
+1. Fast vs Slow
+   
+•	Min LFC: –3.33
+
+•	Median LFC: –0.0007
+
+•	Mean LFC: 0.0037
+
+•	Max LFC: 2.20
+
+•	Significant DEGs (padj < 0.05): 0
+
+3. Intermediate vs Slow
+   
+•	Min LFC: –3.08
+
+•	Median LFC: –0.0036
+
+•	Mean LFC: –0.0160
+
+•	Max LFC: 2.06
+
+•	Significant DEGs (padj < 0.05): 2
+
+5. Fast vs Intermediate
+   
+•	Min LFC: –2.70
+
+•	Median LFC: 0.0036
+
+•	Mean LFC: 0.0198
+
+•	Max LFC: 2.67
+
+•	Significant DEGs (padj < 0.05): 17
+
+Key Insight:
+
+The data shows very small fold changes across most genes, with the majority clustered tightly around 0. This suggests minimal transcriptomic differences between progression classes at the gene level.
+I plan to categorize the data into fast and slow progressors only since the intermediate group might be masking clearer differences.
+
