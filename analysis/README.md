@@ -29,7 +29,7 @@ The output file has been uploaded to analysis folder as "ALS_Progression_Rates_F
 RNA-seq Differential Expression Summary Across ALS Progression Groups
 =====================================================================
 
-DESeq2 package was used to conduct differential gene expression between fast, slow and intermediate progressors. Low expressing genes were filtered out such that if the rowsum is less than 10, it is filtered out. Below is the information about the samples and gene expression. 
+DESeq2 package was used to conduct differential gene expression between fast, slow and intermediate progressors. 
 
 Sample Distribution (Progressor Classes):
 
@@ -39,13 +39,13 @@ Sample Distribution (Progressor Classes):
 
 •	Fast: 116 samples
 
+I ran the DESeq2 model with manual dispersion modeling and checked what it gave me. The filtering step was stringent to allow convergence and only kept genes that had at least 10 normalized counts in at least 4 samples. Below is the summary of the data -
+
 Gene Expression Overview:
 
 •	Mean normalized expression: 1,080.7 counts per gene
 
 •	Genes retained after filtering: 27,818 genes across 420 samples
-
-Below is the summary for log2FoldChange between different groups -
 
 1. Fast vs Slow
    
@@ -59,7 +59,7 @@ Below is the summary for log2FoldChange between different groups -
 
 •	Significant DEGs (padj < 0.05): 0
 
-2. Intermediate vs Slow
+3. Intermediate vs Slow
    
 •	Min LFC: –3.08
 
@@ -71,8 +71,8 @@ Below is the summary for log2FoldChange between different groups -
 
 •	Significant DEGs (padj < 0.05): 2
 
-3. Fast vs Intermediate
-   
+5. Fast vs Intermediate
+
 •	Min LFC: –2.70
 
 •	Median LFC: 0.0036
@@ -82,6 +82,54 @@ Below is the summary for log2FoldChange between different groups -
 •	Max LFC: 2.67
 
 •	Significant DEGs (padj < 0.05): 17
+
+I also tried the less stringent model with no manual dispersion. Low expressing genes were filtered out such that if the rowsum is less than 10, it is filtered out. Below is the summary of the data -
+
+Gene Expression Overview:
+
+•	Mean normalized expression: 622.67 counts per gene
+
+•	Genes retained after filtering: 48,297 genes across 420 samples
+
+Below is the summary for log2FoldChange between different groups -
+
+1. Fast vs Slow
+
+Min LFC: –4.36
+
+Median LFC: –0.0066
+
+Mean LFC: –0.0082
+
+Max LFC: 1.83
+
+Significant DEGs (padj < 0.05): 13
+
+2. Intermediate vs Slow
+   
+Min LFC: –2.43
+
+Median LFC: –0.0078
+
+Mean LFC: –0.0188
+
+Max LFC: 2.13
+
+Significant DEGs (padj < 0.05): 28
+
+3. Fast vs Intermediate
+
+Min LFC: –2.95
+
+Median LFC: 0.0018
+
+Mean LFC: 0.0106
+
+Max LFC: 2.50
+
+Significant DEGs (padj < 0.05): 44
+
+
 
 Key Insight:
 
