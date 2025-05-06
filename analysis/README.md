@@ -130,7 +130,6 @@ Max LFC: 2.50
 Significant DEGs (padj < 0.05): 44
 
 
-
 Key Insight:
 
 The data shows very small fold changes across most genes, with the majority clustered tightly around 0. This suggests minimal transcriptomic differences between progression classes at the gene level.
