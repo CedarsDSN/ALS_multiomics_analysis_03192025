@@ -39,7 +39,6 @@ Gene Expression Overview:
 •	Genes retained after filtering: 27,818 genes across 420 samples
 
 1. Fast vs Slow
-   
 •	Min LFC: –3.33
 
 •	Median LFC: –0.0007
@@ -50,7 +49,7 @@ Gene Expression Overview:
 
 •	Significant DEGs (padj < 0.05): 0
 
-3. Intermediate vs Slow
+2. Intermediate vs Slow
    
 •	Min LFC: –3.08
 
@@ -62,7 +61,7 @@ Gene Expression Overview:
 
 •	Significant DEGs (padj < 0.05): 2
 
-5. Fast vs Intermediate
+3. Fast vs Intermediate
    
 •	Min LFC: –2.70
 
