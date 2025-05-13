@@ -2,6 +2,7 @@
 =====================
 
 ## Fast, intermediate, and slow progressors
+===========================================
 
 ### Categorizing patients into fast, intermediate, and slow progressors
 
@@ -32,7 +33,7 @@ The table [ALS_Progression_Rates_Full.csv](categorization/fast_slow_intermediate
 **Gene Expression Analysis (RNA-seq)**
 ======================================
 
-## Differential Expression Between Fast and Slow ALS Progressors
+## Differential Expression Between Fast, Intermediate and Slow ALS Progressors
 
 ### Preparing Expression Data and Running DESeq2 Analysis
 
@@ -50,7 +51,7 @@ Required Packages/Software:
     - Raw count matrix shared on OneDrive: [AnswerALS-651-T-v1-release6_raw-counts.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EQRkvr_HBXdKlbJ8hm4MXF8B8BQWaMthoJ_hF4xoQGjyZA?email=Zhiping.Wang%40cshs.org&e=99X2zT))
     - Progression metadata: [ALS_Progression_Rates_Full.csv](categorization/fast_slow_intermediate/ALS_Progression_Rates_Full.csv)
     - Sample mapping file: [Sample_Mapping_File_Feb_2024.csv](expression_analysis/inputs/Sample_Mapping_File_Feb_2024.csv)
-  - **Description:** This script performs PCA using variance-stabilized expression (VST), checks for batch effects, tests clinical confounders against major principal components, filters genes, and runs differential gene expression analysis using DESeq2 between fast, slow and intermediate ALS progressors. The script also generates plots for PCA and batch visualization.
+  - **Description:** This script performs PCA using variance-stabilized expression (VST), checks for batch effects, tests clinical confounders against major principal components, filters genes, and runs differential gene expression analysis using DESeq2 between fast, slow, and intermediate ALS progressors. The script also generates plots for PCA and batch visualization.
 
 ---
 
