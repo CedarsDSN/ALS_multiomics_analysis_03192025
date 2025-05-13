@@ -14,6 +14,7 @@ AnswerALS contains clinical and omics data (genomics, transcriptomics, epigenomi
 
 # Analysis
 ## Fast, intermediate, and slow progressors analysis
+ - analysis record
 
 # Results
 
