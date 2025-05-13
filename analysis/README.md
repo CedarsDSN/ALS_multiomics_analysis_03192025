@@ -16,7 +16,7 @@ Required Packages/Software:
 **Scripts and Inputs:**
 - **[calculate_progression.py](/scripts/calculate_progression.py)**
   - **Inputs:**
-    - Clinical tables ALSFRS-R [ALSFRS-R.csv](categorization/inputs/ALSFRS_R.csv), [Demographics.csv](analysis/categorization/inputs/Demographics.csv), [aals_dataportal_datatable.csv](analysis/categorization/inputs/aals_dataportal_datatable.csv)
+    - Clinical tables ALSFRS-R [ALSFRS-R.csv](categorization/inputs/ALSFRS_R.csv), [Demographics.csv](categorization/inputs/Demographics.csv), [aals_dataportal_datatable.csv](categorization/inputs/aals_dataportal_datatable.csv)
   - **Description:** Generates a table [ALS_Progression_Rates_Full.csv](analysis/categorization/fast_slow_intermediate/ALS_Progression_Rates_Full.csv) which contains a column Progressor_Class which categorizes patients into fast, slow and intermediate progressors and a plot showing the distribution of patients into the three classes.
  
 #### II. Process
