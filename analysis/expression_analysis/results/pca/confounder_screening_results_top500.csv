@@ -1,0 +1,6 @@
+﻿Variable,PC1 (p-value),PC2 (p-value)
+Progressor_Class,0.277,0.813
+SEX,0.746,0.766
+RACE,0.031,0.027
+Site_of_Onset,0.306,0.638
+Age at Onset,0.934,0.645
