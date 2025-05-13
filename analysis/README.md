@@ -17,7 +17,7 @@ Required Packages/Software:
 - **[calculate_progression.py](/scripts/calculate_progression.py)**
   - **Inputs:**
     - Clinical tables ALSFRS-R [ALSFRS-R.csv](categorization/inputs/ALSFRS_R.csv), [Demographics.csv](categorization/inputs/Demographics.csv), [aals_dataportal_datatable.csv](categorization/inputs/aals_dataportal_datatable.csv)
-  - **Description:** Generates a table [ALS_Progression_Rates_Full.csv](analysis/categorization/fast_slow_intermediate/ALS_Progression_Rates_Full.csv) which contains a column Progressor_Class which categorizes patients into fast, slow and intermediate progressors and a plot showing the distribution of patients into the three classes.
+  - **Description:** Generates a table [ALS_Progression_Rates_Full.csv](categorization/fast_slow_intermediate/ALS_Progression_Rates_Full.csv) which contains a column Progressor_Class which categorizes patients into fast, slow and intermediate progressors and a plot showing the distribution of patients into the three classes.
  
 #### II. Process
 **Deriving the ALSFRS-R Progression Rate**
@@ -26,7 +26,7 @@ Required Packages/Software:
    - Performed a consistency check between the recorded ALSFRS-R latest values and those computed from visit-level data.
   
 #### III. Results
-The table [ALS_Progression_Rates_Full.csv](analysis/categorization/fast_slow_intermediate/ALS_Progression_Rates_Full.csv) has the categorization of patients into slow, fast and intermediate progressors.
+The table [ALS_Progression_Rates_Full.csv](categorization/fast_slow_intermediate/ALS_Progression_Rates_Full.csv) has the categorization of patients into slow, fast and intermediate progressors.
 
 
 **Gene Expression Analysis (RNA-seq)**
@@ -47,9 +47,9 @@ Required Packages/Software:
 **Scripts and Inputs:**
 - **[als_gene_expression_analysis.R](../scripts/als_gene_expression_analysis.R)**
   - **Inputs:**
-    - Raw count matrix: [AnswerALS-651-T-v1-release6_raw-counts.csv](data/AnswerALS-651-T-v1-release6_raw-counts.csv)
-    - Progression metadata: [ALS_Progression_Rates_Full.csv](analysis/categorization/fast_slow_intermediate/ALS_Progression_Rates_Full.csv)
-    - Sample mapping file: [Sample_Mapping_File_Feb_2024.csv](data/Sample_Mapping_File_Feb_2024.csv)
+    - Raw count matrix shared on OneDrive: [AnswerALS-651-T-v1-release6_raw-counts.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EQRkvr_HBXdKlbJ8hm4MXF8B8BQWaMthoJ_hF4xoQGjyZA?email=Zhiping.Wang%40cshs.org&e=99X2zT))
+    - Progression metadata: [ALS_Progression_Rates_Full.csv](categorization/fast_slow_intermediate/ALS_Progression_Rates_Full.csv)
+    - Sample mapping file: [Sample_Mapping_File_Feb_2024.csv](expression_analysis/inputs/Sample_Mapping_File_Feb_2024.csv)
   - **Description:** This script performs PCA using variance-stabilized expression (VST), checks for batch effects, tests clinical confounders against major principal components, filters genes, and runs differential gene expression analysis using DESeq2 between fast, slow and intermediate ALS progressors. The script also generates plots for PCA and batch visualization.
 
 ---
