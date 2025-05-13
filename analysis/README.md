@@ -45,7 +45,7 @@ Required Packages/Software:
  - R (≥4.2), bioconductor packages: DESeq2, pheatmap, CRAN packages: tidyverse, RColorBrewer
 
 **Scripts and Inputs:**
-- **[als_gene_expression_analysis.R](/../scripts/als_gene_expression_analysis.R)**
+- **[als_gene_expression_analysis.R](../scripts/als_gene_expression_analysis.R)**
   - **Inputs:**
     - Raw count matrix: [AnswerALS-651-T-v1-release6_raw-counts.csv](data/AnswerALS-651-T-v1-release6_raw-counts.csv)
     - Progression metadata: [ALS_Progression_Rates_Full.csv](analysis/categorization/fast_slow_intermediate/ALS_Progression_Rates_Full.csv)
