@@ -112,7 +112,7 @@ Required Packages/Software:
    - Evaluates potential confounding factors like sex and smoking status by overlaying them on PCA plots and testing their association with principal components.
   
 #### III. Results
-PCA plots for Case vs Healthy Controls - PC1 vs PC2, and lower dimensional PCs. Using Sex in PC1 vs PC2 was able to separate the patients and healthy controls. A binary categorical variable, which is the smoking status, was also checked but was not able to the patients and healthy controls. All the PC plots are [here](caseandhealthycontrol/outputs/pc)
+PCA plots for Case vs Healthy Controls - PC1 vs PC2, and lower dimensional PCs. Using Sex in PC1 vs PC2 was able to separate the patients and healthy controls. A binary categorical variable, which is the smoking status, was also checked but was not able to the patients and healthy controls. All the PC plots are [here](caseandhealthycontrol/outputs/pca)
 
 
 - **[get_binary_variables.R](/scripts/get_binary_variables.R)**
