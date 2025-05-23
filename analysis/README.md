@@ -30,8 +30,6 @@ Required Packages/Software:
 The table [ALS_Progression_Rates_Full.csv](categorization/fast_slow_intermediate/ALS_Progression_Rates_Full.csv) has the categorization of patients into slow, fast and intermediate progressors.
 
 
-**Gene Expression Analysis (RNA-seq)**
-======================================
 
 ## Differential Expression Between Fast, Intermediate and Slow ALS Progressors
 
