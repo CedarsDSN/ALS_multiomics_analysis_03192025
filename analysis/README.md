@@ -117,10 +117,10 @@ Required Packages/Software:
 PCA plots for Case vs Healthy Controls - PC1 vs PC2, and lower dimensional PCs. Using Sex in PC1 vs PC2 was able to separate the patients and healthy controls. A binary categorical variable, which is the smoking status, was also checked but was not able to the patients and healthy controls
 
 
-- **[SeperateCaseAndHealthyControls.R](/scripts/SeperateCaseAndHealthyControls.R)**
+- **[get_binary_variables.R](/scripts/get_binary_variables.R)**
   - **Inputs:**
     - Clinical dictionary file [Clinical_Dictionary_v3_2024.csv](caseandhealthycontrol/inputs/Clinical_Dictionary_v3_2024.csv)
-  - **Description:** Extracts the binary columns from the columns. 
+  - **Description:** Extracts the binary columns from the set of all columns. 
  
 #### II. Process
 **Extracting all Binary variables**
