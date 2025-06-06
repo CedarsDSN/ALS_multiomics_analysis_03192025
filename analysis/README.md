@@ -103,9 +103,10 @@ Required Packages/Software:
 - **[SeperateCaseAndHealthyControls.R](/scripts/SeperateCaseAndHealthyControls.R)**
   - **Inputs:**
     - Raw count matrix shared on OneDrive: [AnswerALS-651-T-v1-release6_raw-counts.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EQRkvr_HBXdKlbJ8hm4MXF8B8BQWaMthoJ_hF4xoQGjyZA?email=Zhiping.Wang%40cshs.org&e=99X2zT))
-    - Clinical tables [All the](caseandhealthycontrol/inputs/Environmental_Questionnaire.csv),
-    - Participants Information [aals_participants.csv](caseandhealthycontrol/inputs/aals_participants.csv)
-    - Sample mapping file []()
+    - Clinical tables [Tables folder](https://cedarssinai-my.sharepoint.com/:f:/g/personal/zhiping_wang_cshs_org/EhKn3iUgX09Ms52oNbH10jsBkNfN-yf08guXy6PjpJ_aKQ?e=Aj90hx),
+    - Participants Information [aals_participants.csv]([caseandhealthycontrol/inputs/aals_participants.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EdFdY7-Nng5PsWsF519FWzkBhxwlWIJ7t4kQL6qMZmhY4A?e=narnzQ))
+    - Sample mapping file [Sample_Mapping_File_Feb_2024.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EWxaboowXe1Iu4yAoNn8aMUBaQ9W92lsduqsOfY84TllXA?e=LwbQgO)
+    - Binary variables file [binary_variable.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EccZ_F21scpDhTzFyCRzGa4BRlnAhWFM5jjcJSPitpQuuw?e=zYpObg)
   - **Description:** Creates PCA plots to separate patients who are cases and healthy controls. It also outputs PCA plots for lower-dimensional PCs. In the second update to the script, two functions were used to compare the PCA pattern - plotPCA function from DESeq2 and prcomp function from the matrixStats package. The PCA was carried out with both functions with the top 500 variable genes, top 1000 variable genes, and all genes. Batch effects were visualized with the top 500 variable genes and all genes. A different normalization method which is the logCPM normalization using the edgeR package. A more stringent filtering was also carried out to check if that would change the pattern. To show empirical evidence to see that the top 500 variable genes shows the most variability, a cumulative variance plot was plotted. Differential expression analysis was carried out using sex as a covariate. Next, the top loadings of PC1 and PC2 were inspected to check what these genes correspond to. An analysis was carried out, removing the sex chromosome genes, after which the PC1 vs PC2 plot was plotted again to see the effect of removing sex chromosome genes. Finally, the clinical variables were used to conduct an association study with top loadings of PC1 and PC2. 
  
 #### II. Process
@@ -135,21 +136,21 @@ Required Packages/Software:
 ### Association Testing (PCA vs Metadata)
 - Loaded 279 binary variables across 35 clinical tables.
 - Mapped `Participant_ID` to each variable.
-- Used linear models (or ANOVA for categorical variables) to test association of each variable with PC1 and PC2.
+- Used linear models (or ANOVA for categorical variables) to test the association of each variable with PC1 and PC2.
 - Ranked results by minimum p-value and plotted the top 15 associations.
   
 #### III. Results
  III. Output Files
-
+Note - There are many files outputted by this script which are uploaded [here in OneDrive](https://cedarssinai-my.sharepoint.com/:f:/g/personal/zhiping_wang_cshs_org/EitmyWhxHM1CoeEyv0D5PcsBuQwMyywVDshlbX1EQVtugg?e=b60r5d). Below are the main results. 
 | File | Description |
 |------|-------------|
-| `PCA_PC1vsPC2_CaseandControl.pdf` | PCA plot by Case/Control |
-| `PC1vsPC2_sex_all_genes.pdf` | PCA plot by Sex (all genes) |
-| `PCA_plotPCA_top_500_genes.pdf` | PCA by Sex (top 500 genes) |
-| `PC1vsPC2_no_sex_chromosomes.pdf` | PCA without chrX/Y genes |
-| `PCA_Top500_Variable_Genes_edgeR_logCPM.pdf` | PCA with edgeR logCPM |
-| `Top_15_Variable_Associations_PCA.pdf` | Barplot of top 15 clinical associations |
-| `PCA_PC1_PC2_variable_associations.csv` | Full association results table |
+| [PC1vsPC2_casevscontrol.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/EX1t33-fycpNvn0MR6f63foBneiIFt9a2vPB0561LVPvag?e=J3ocD3) | PCA plot by Case/Control |
+| [PC1vsPC2_sex_all_genes.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/ERBjgSQD2H1OrB__4d1aV4oBi8piAqN5qjG2MGbo7rRndg?e=G0dhKO) | PCA plot by Sex (all genes) |
+| [PC1vsPC2_prcomp_500_colored_sex.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/Eba2MO6mP3JGq_Tf8s1Aa8sBTLA5PxtJi5ujW5MXMnR1og?e=FgeYBt) | PCA by Sex (top 500 genes) |
+| [PC1vsPC2_no_sex_chromosomes.pdf]([PC1vsPC2_no_sex_chromosomes](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/EUbW5Y5rVvhOrcyuLURGmGIBECh_vEx2jEAaEoeuquFUUQ?e=w51ns0)) | PCA without chrX/Y genes |
+| [PCA_Top500_Variable_Genes_edgeR_logCPM.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/EQrVwGwYV8FBgdS7t3XgFfcBB-YSOf0eCskhOZZMZAz0ZA?e=AU4B0W) | PCA with edgeR logCPM |
+| [Top_15_Variable_Associations_PCA.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/Ecjti3la9J1OhRVozHYAa7oBfL2x891FYudfyJifLR2fMA?e=BWP9pX) | Barplot of top 15 clinical associations |
+| [PCA_PC1_PC2_variable_associations.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EQYuwsWWlqJMvZSlCN_oBo4BxMBg7Yd0_CeZrWMNy5KyvQ?e=j4eiVx) | Full association results table |
 
 
 - ### **[get_binary_variables.R](/scripts/get_binary_variables.R)**
