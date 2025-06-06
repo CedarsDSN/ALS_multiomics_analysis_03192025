@@ -112,7 +112,7 @@ Required Packages/Software:
   - **Description:** Creates PCA plots to separate patients who are cases and healthy controls. It also outputs PCA plots for lower-dimensional PCs. In the second update to the script, two functions were used to compare the PCA pattern - plotPCA function from DESeq2 and prcomp function from the matrixStats package. The PCA was carried out with both functions with the top 500 variable genes, top 1000 variable genes, and all genes. Batch effects were visualized with the top 500 variable genes and all genes. A different normalization method which is the logCPM normalization using the edgeR package. A more stringent filtering was also carried out to check if that would change the pattern. To show empirical evidence to see that the top 500 variable genes shows the most variability, a cumulative variance plot was plotted. Differential expression analysis was carried out using sex as a covariate. Next, the top loadings of PC1 and PC2 were inspected to check what these genes correspond to. An analysis was carried out, removing the sex chromosome genes, after which the PC1 vs PC2 plot was plotted again to see the effect of removing sex chromosome genes. Finally, the clinical variables were used to conduct an association study with top loadings of PC1 and PC2. 
  
 #### II. Process
-# Preprocessing
+** Preprocessing
 - Merged RNA-seq count data with participant metadata and sample IDs.
 - Created `DESeqDataSet`, filtered low-count genes, and applied variance-stabilizing transformation (VST).
 - Generated PCA plots using:
@@ -120,7 +120,7 @@ Required Packages/Software:
   - Top 500 most variable genes
   - edgeR logCPM-normalized matrix
 
-# Confounder Screening
+** Confounder Screening
 - Colored PCA plots by:
   - Case/Control status
   - Biological Sex
@@ -128,14 +128,14 @@ Required Packages/Software:
 - Observed separation by **sex** in PC1–PC2 space.
 - Explored whether sex chromosome genes (chrX/chrY) caused this pattern.
 
-# Sex Chromosome Filtering
+** Sex Chromosome Filtering
 - Identified top 20 gene loadings for PC1 and PC2.
 - Used `biomaRt` to annotate chromosome locations.
 - Observed enrichment of chrY genes in top PCA contributors.
 - Re-ran PCA after removing chrX and chrY genes.
 - Result: **Sex-based separation disappeared**, confirming sex chromosome influence.
 
-# Association Testing (PCA vs Metadata)
+** Association Testing (PCA vs Metadata)
 - Loaded 279 binary variables across 35 clinical tables.
 - Mapped `Participant_ID` to each variable.
 - Used linear models (or ANOVA for categorical variables) to test the association of each variable with PC1 and PC2.
