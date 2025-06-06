@@ -152,7 +152,7 @@ Required Packages/Software:
 | `PCA_PC1_PC2_variable_associations.csv` | Full association results table |
 
 
-- **[get_binary_variables.R](/scripts/get_binary_variables.R)**
+- ### **[get_binary_variables.R](/scripts/get_binary_variables.R)**
   - **Inputs:**
     - Clinical dictionary file [Clinical_Dictionary_v3_2024.csv](caseandhealthycontrol/inputs/Clinical_Dictionary_v3_2024.csv)
   - **Description:** Extracts the binary columns from the set of all columns. 
