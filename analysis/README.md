@@ -147,7 +147,7 @@ Note - There are many files outputted by this script which are uploaded [here in
 | [PC1vsPC2_casevscontrol.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/EX1t33-fycpNvn0MR6f63foBneiIFt9a2vPB0561LVPvag?e=J3ocD3) | PCA plot by Case/Control |
 | [PC1vsPC2_sex_all_genes.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/ERBjgSQD2H1OrB__4d1aV4oBi8piAqN5qjG2MGbo7rRndg?e=G0dhKO) | PCA plot by Sex (all genes) |
 | [PC1vsPC2_prcomp_500_colored_sex.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/Eba2MO6mP3JGq_Tf8s1Aa8sBTLA5PxtJi5ujW5MXMnR1og?e=FgeYBt) | PCA by Sex (top 500 genes) |
-| [PC1vsPC2_no_sex_chromosomes.pdf]([PC1vsPC2_no_sex_chromosomes](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/EUbW5Y5rVvhOrcyuLURGmGIBECh_vEx2jEAaEoeuquFUUQ?e=w51ns0)) | PCA without chrX/Y genes |
+| [PC1vsPC2_no_sex_chromosomes.pdf]([PC1vsPC2_no_sex_chromosomes](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/EUbW5Y5rVvhOrcyuLURGmGIBECh_vEx2jEAaEoeuquFUUQ?e=w51ns0) | PCA without chrX/Y genes |
 | [PCA_Top500_Variable_Genes_edgeR_logCPM.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/EQrVwGwYV8FBgdS7t3XgFfcBB-YSOf0eCskhOZZMZAz0ZA?e=AU4B0W) | PCA with edgeR logCPM |
 | [Top_15_Variable_Associations_PCA.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/Ecjti3la9J1OhRVozHYAa7oBfL2x891FYudfyJifLR2fMA?e=BWP9pX) | Barplot of top 15 clinical associations |
 | [PCA_PC1_PC2_variable_associations.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EQYuwsWWlqJMvZSlCN_oBo4BxMBg7Yd0_CeZrWMNy5KyvQ?e=j4eiVx) | Full association results table |
