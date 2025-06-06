@@ -170,7 +170,7 @@ Note - There are many files outputted by this script which are uploaded [here in
      * Have exactly 2 distinct response options (e.g., Yes/No).
   
 #### III. Results
-A [table](caseandhealthycontrol/outputs/binary_variables.csv) listing all binary clinical variables across forms, including their form name, field name, label, and value coding.
+A [table](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EccZ_F21scpDhTzFyCRzGa4BRlnAhWFM5jjcJSPitpQuuw?e=zYpObg) listing all binary clinical variables across forms, including their form name, field name, label, and value coding.
 
 
 
