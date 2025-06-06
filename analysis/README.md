@@ -139,7 +139,7 @@ Required Packages/Software:
 - Ranked results by minimum p-value and plotted the top 15 associations.
   
 #### III. Results
-## III. Output Files
+ III. Output Files
 
 | File | Description |
 |------|-------------|
