@@ -3,7 +3,7 @@
 # Project: ALS multi-omics analysis
 # Source status: documented/sanitized for GitHub handoff
 # ============================================================
-# Documentation summary from docs/SCRIPT_SPECS_FULL.md
+# Documentation summary from scripts/README.md
 # 
 # ## `proteomicsDE.R`
 # 
@@ -24,7 +24,7 @@
 # 
 # **Outputs**
 # 
-# - Under `outputs/proteomics_guardrail/`: `proteomics_guardrail_scores.tsv`, `guardrail_score_boxplot.png`, `limma_C9orf72_vs_Control.tsv`, `limma_SOD1_vs_Control.tsv`, `limma_Sporadic_vs_Control.tsv`, `fgsea_hallmark_all.tsv`, `fgsea_hallmark_top20_per_comparison.tsv`, `proteomics_pcs.tsv`, `proteomics_PCA_PC1_PC2.png`, `proteomics_PCA_PC1_PC2_colored_by_batch.png`, `proteomics_PCA_PC1_PC2_after_reg_sex.png`, `CBX1_protein_abundance_boxplot_C9_vs_Control.pdf`.
+# - Under `analysis/batch_05_proteomics/results/proteomics_guardrail/`: `proteomics_guardrail_scores.tsv`, `guardrail_score_boxplot.png`, `limma_C9orf72_vs_Control.tsv`, `limma_SOD1_vs_Control.tsv`, `limma_Sporadic_vs_Control.tsv`, `fgsea_hallmark_all.tsv`, `fgsea_hallmark_top20_per_comparison.tsv`, `proteomics_pcs.tsv`, `proteomics_PCA_PC1_PC2.png`, `proteomics_PCA_PC1_PC2_colored_by_batch.png`, `proteomics_PCA_PC1_PC2_after_reg_sex.png`, `CBX1_protein_abundance_boxplot_C9_vs_Control.pdf`.
 # 
 # **Upstream dependencies**
 # 
@@ -42,7 +42,7 @@
 # Refactored command-line version:
 # 
 # ```bash
-# Rscript scripts/refactored/proteomics/02_proteomics_de.R --config config/config.yml --base-dir /path/to/private/ALS --outdir results/proteomics/02_proteomics_de
+# Rscript scripts/refactored/proteomics/02_proteomics_de.R --config config/config.yml --base-dir /path/to/private/ALS --outdir analysis/batch_05_proteomics/results/proteomics_de
 # ```
 # 
 # **Refactor notes**
@@ -189,7 +189,7 @@ colnames(counts) <- trimws(colnames(counts))
 guardrail_table_file <- "familial_signature_strict.csv"
 
 # Output directory
-outdir <- "outputs/proteomics_guardrail"
+outdir <- file.path(outdir, "proteomics_guardrail")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 
 # ----------------------------

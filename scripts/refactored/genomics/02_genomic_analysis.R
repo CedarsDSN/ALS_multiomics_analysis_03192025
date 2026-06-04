@@ -1,6 +1,6 @@
 # ============================================================
 # Refactored entrypoint for original script: genomic_analysis.R
-# Use --config, --base-dir, --outdir, and --objects. See docs/SCRIPT_SPECS_FULL.md.
+# Use --config, --base-dir, --outdir, and --objects. See scripts/README.md.
 # ============================================================
 # ---- ALS project bootstrap ----
 .get_script_dir <- function() {

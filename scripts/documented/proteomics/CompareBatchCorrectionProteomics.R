@@ -3,7 +3,7 @@
 # Project: ALS multi-omics analysis
 # Source status: documented/sanitized for GitHub handoff
 # ============================================================
-# Documentation summary from docs/SCRIPT_SPECS_FULL.md
+# Documentation summary from scripts/README.md
 # 
 # ## `CompareBatchCorrectionProteomics.R`
 # 
@@ -23,7 +23,7 @@
 # 
 # **Outputs**
 # 
-# - Folder `C9vsCtrl_proteoDA_genelevel_outputs/`: `protein_to_gene_mapping_prebatch.csv`, `protein_to_gene_mapping_postbatch.csv`, `limma_genelevel_<variant>.csv`, `summary_genelevel_across_variants.csv`, `tstat_spearman_corr_genelevel.csv`, `tstat_spearman_corr_genelevel_heatmap.png`, `camera_hallmark_genelevel_across_variants.csv`, `camera_hallmark_genelevel_top20_per_variant.csv`.
+# - Folder `C9vsCtrl_proteoDA_genelevel_outputs`: `protein_to_gene_mapping_prebatch.csv`, `protein_to_gene_mapping_postbatch.csv`, `limma_genelevel_<variant>.csv`, `summary_genelevel_across_variants.csv`, `tstat_spearman_corr_genelevel.csv`, `tstat_spearman_corr_genelevel_heatmap.png`, `camera_hallmark_genelevel_across_variants.csv`, `camera_hallmark_genelevel_top20_per_variant.csv`.
 # 
 # **Upstream dependencies**
 # 
@@ -40,7 +40,7 @@
 # Refactored command-line version:
 # 
 # ```bash
-# Rscript scripts/refactored/proteomics/03_compare_batch_correction.R --config config/config.yml --base-dir /path/to/private/ALS --outdir results/proteomics/03_compare_batch_correction
+# Rscript scripts/refactored/proteomics/03_compare_batch_correction.R --config config/config.yml --base-dir /path/to/private/ALS --outdir analysis/batch_05_proteomics/results/batch_correction
 # ```
 # 
 # **Refactor notes**

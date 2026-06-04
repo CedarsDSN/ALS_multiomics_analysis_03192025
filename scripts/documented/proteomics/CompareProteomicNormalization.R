@@ -3,7 +3,7 @@
 # Project: ALS multi-omics analysis
 # Source status: documented/sanitized for GitHub handoff
 # ============================================================
-# Documentation summary from docs/SCRIPT_SPECS_FULL.md
+# Documentation summary from scripts/README.md
 # 
 # ## `CompareProteomicNormalization.R`
 # 
@@ -40,7 +40,7 @@
 # Refactored command-line version:
 # 
 # ```bash
-# Rscript scripts/refactored/proteomics/01_compare_normalization.R --config config/config.yml --base-dir /path/to/private/ALS --outdir results/proteomics/01_compare_normalization
+# Rscript scripts/refactored/proteomics/01_compare_normalization.R --config config/config.yml --base-dir /path/to/private/ALS --outdir analysis/batch_05_proteomics/results/normalization
 # ```
 # 
 # **Refactor notes**

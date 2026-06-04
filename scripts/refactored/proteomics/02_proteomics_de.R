@@ -1,6 +1,6 @@
 # ============================================================
 # Refactored entrypoint for original script: proteomicsDE.R
-# Use --config, --base-dir, --outdir, and --objects. See docs/SCRIPT_SPECS_FULL.md.
+# Use --config, --base-dir, --outdir, and --objects. See scripts/README.md.
 # ============================================================
 # ---- ALS project bootstrap ----
 .get_script_dir <- function() {
@@ -172,7 +172,7 @@ colnames(counts) <- trimws(colnames(counts))
 guardrail_table_file <- "familial_signature_strict.csv"
 
 # Output directory
-outdir <- "outputs/proteomics_guardrail"
+outdir <- file.path(outdir, "proteomics_guardrail")
 dir.create(outdir, recursive = TRUE, showWarnings = FALSE)
 
 # ----------------------------

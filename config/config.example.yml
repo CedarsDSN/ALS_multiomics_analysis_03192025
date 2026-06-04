@@ -8,7 +8,7 @@ project:
 
 outputs:
   root: "results"
-  objects: "outputs/objects"
+  objects: "analysis/batch_03_axis_scoring_sporadic_subtyping/objects"
   logs: "logs"
 
 transcriptomics:
@@ -45,7 +45,7 @@ eqtl:
   cct2_cis_dosage_raw: "cct2_cis_dosage.raw"
 
 handoffs:
-  axis_scoring: "outputs/objects/axis_scoring_objects.rds"
-  sporadic_subtyping: "outputs/objects/sporadic_subtyping_objects.rds"
-  genomic_burden: "outputs/objects/genomic_analysis_objects.rds"
-  prset_testing: "outputs/objects/prset_testing_objects.rds"
+  axis_scoring: "analysis/batch_03_axis_scoring_sporadic_subtyping/objects/03_axis_scoring_objects.rds"
+  sporadic_subtyping: "analysis/batch_03_axis_scoring_sporadic_subtyping/objects/01_sporadic_subtyping_objects.rds"
+  genomic_burden: "analysis/batch_06_genomics_prs_eqtl/objects/genomic_analysis_objects.rds"
+  prset_testing: "analysis/batch_06_genomics_prs_eqtl/objects/prset_testing_objects.rds"

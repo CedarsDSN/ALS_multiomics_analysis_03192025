@@ -94,7 +94,7 @@ Rscript scripts/refactored/validation/01_sensitivity_analysis.R \
   --config config/config.yml \
   --base-dir /path/to/private/ALS \
   --outdir analysis/batch_04_validation_classifier_ipa/results/sensitivity_analysis \
-  --objects outputs/objects/03_axis_scoring_objects.rds,outputs/objects/01_sporadic_subtyping_objects.rds
+  --objects analysis/batch_03_axis_scoring_sporadic_subtyping/objects/03_axis_scoring_objects.rds,analysis/batch_03_axis_scoring_sporadic_subtyping/objects/01_sporadic_subtyping_objects.rds
 ```
 
 LASSO classifier:
@@ -104,7 +104,7 @@ Rscript scripts/refactored/validation/02_lasso_classifier.R \
   --config config/config.yml \
   --base-dir /path/to/private/ALS \
   --outdir analysis/batch_04_validation_classifier_ipa/results/lasso_classifier \
-  --objects outputs/objects/03_axis_scoring_objects.rds,outputs/objects/01_sporadic_subtyping_objects.rds
+  --objects analysis/batch_03_axis_scoring_sporadic_subtyping/objects/03_axis_scoring_objects.rds,analysis/batch_03_axis_scoring_sporadic_subtyping/objects/01_sporadic_subtyping_objects.rds
 ```
 
 IPA preparation:
@@ -114,7 +114,7 @@ Rscript scripts/refactored/validation/03_ipa_prepare.R \
   --config config/config.yml \
   --base-dir /path/to/private/ALS \
   --outdir analysis/batch_04_validation_classifier_ipa/results/ipa_prepare \
-  --objects outputs/objects/03_axis_scoring_objects.rds,outputs/objects/01_sporadic_subtyping_objects.rds
+  --objects analysis/batch_03_axis_scoring_sporadic_subtyping/objects/03_axis_scoring_objects.rds,analysis/batch_03_axis_scoring_sporadic_subtyping/objects/01_sporadic_subtyping_objects.rds
 ```
 
 ## Run record

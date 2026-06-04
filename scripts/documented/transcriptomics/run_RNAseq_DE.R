@@ -3,7 +3,7 @@
 # Project: ALS multi-omics analysis
 # Source status: documented/sanitized for GitHub handoff
 # ============================================================
-# Documentation summary from docs/SCRIPT_SPECS_FULL.md
+# Documentation summary from scripts/README.md
 # 
 # ## `run_RNAseq_DE.R`
 # 
@@ -49,7 +49,7 @@
 # Refactored command-line version:
 # 
 # ```bash
-# Rscript scripts/refactored/transcriptomics/01_progression_rnaseq_de.R --config config/config.yml --base-dir /path/to/private/ALS --outdir results/transcriptomics/01_progression_rnaseq_de
+# Rscript scripts/refactored/transcriptomics/01_progression_rnaseq_de.R --config config/config.yml --base-dir /path/to/private/ALS --outdir analysis/batch_01_transcriptomics_progression/results/progression_rnaseq_de
 # ```
 # 
 # **Refactor notes**

@@ -68,7 +68,7 @@ large generated outputs
 patient-level RDS objects
 ```
 
-Generated results should usually be written to `analysis/<batch>/results/` or `results/`, but those paths are ignored by Git by default. If a small summary output is safe to include, move it into the batch README or a clearly named summary file after checking that it contains no protected patient-level information.
+Generated analysis outputs should usually be written inside the relevant batch folder, for example `analysis/<batch>/results/`. These paths are ignored by Git by default. If a small summary output is safe to include, move it into the batch README or a clearly named summary file after checking that it contains no protected patient-level information.
 
 ## Batch index
 
