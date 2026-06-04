@@ -1,0 +1,21 @@
+domain,original_script,documented_path,refactored_path,purpose_short
+transcriptomics,run_RNAseq_DE.R,scripts/documented/transcriptomics/run_RNAseq_DE.R,scripts/refactored/transcriptomics/01_progression_rnaseq_de.R,RNA-seq QC and progression-class differential expression
+transcriptomics,C9SOD1Convergence.R,scripts/documented/transcriptomics/C9SOD1Convergence.R,scripts/refactored/transcriptomics/02_c9_sod1_convergence.R,Familial C9orf72 and SOD1 transcriptomic convergence/divergence analysis
+transcriptomics,AxisScoring.R,scripts/documented/transcriptomics/AxisScoring.R,scripts/refactored/transcriptomics/03_axis_scoring.R,Hallmark metabolic inflammation and cell-cycle axis scoring
+subtyping,sporadic_subtyping.R,scripts/documented/subtyping/sporadic_subtyping.R,scripts/refactored/subtyping/01_sporadic_subtyping.R,Sporadic ALS molecular subtype discovery and subtype DE
+validation,SensitivityAnalysis.R,scripts/documented/validation/SensitivityAnalysis.R,scripts/refactored/validation/01_sensitivity_analysis.R,Subtype and axis sensitivity analyses
+validation,LassoClassifier.R,scripts/documented/validation/LassoClassifier.R,scripts/refactored/validation/02_lasso_classifier.R,One-vs-rest LASSO classifier for sporadic ALS subtypes
+validation,IPAPrepare.R,scripts/documented/validation/IPAPrepare.R,scripts/refactored/validation/03_ipa_prepare.R,IPA-ready differential-expression table preparation and CCT2 checks
+proteomics,CompareProteomicNormalization.R,scripts/documented/proteomics/CompareProteomicNormalization.R,scripts/refactored/proteomics/01_compare_normalization.R,Proteomics normalization comparison
+proteomics,proteomicsDE.R,scripts/documented/proteomics/proteomicsDE.R,scripts/refactored/proteomics/02_proteomics_de.R,Protein differential abundance and pathway analysis
+proteomics,CompareBatchCorrectionProteomics.R,scripts/documented/proteomics/CompareBatchCorrectionProteomics.R,scripts/refactored/proteomics/03_compare_batch_correction.R,Proteomics batch-correction strategy comparison
+proteomics,sensitivity_analysis_prebatch.py,scripts/documented/proteomics/sensitivity_analysis_prebatch.py,scripts/refactored/proteomics/04_sensitivity_analysis_prebatch.py,C9orf72 vs control pre/post batch-correction sensitivity analysis
+genomics,MAF_allele_frequency.R,scripts/documented/genomics/MAF_allele_frequency.R,scripts/refactored/genomics/01_maf_allele_frequency.R,Minor allele frequency distribution summaries
+genomics,genomic_analysis.R,scripts/documented/genomics/genomic_analysis.R,scripts/refactored/genomics/02_genomic_analysis.R,Rare damaging/LoF burden testing by subtype and NfL
+genomics,genomic_stratification.R,scripts/documented/genomics/genomic_stratification.R,scripts/refactored/genomics/03_genomic_stratification.R,Patient-gene matrices network perturbation and SNF clustering
+prs,CreateFilesForPRSet.R,scripts/documented/prs/CreateFilesForPRSet.R,scripts/refactored/prs/01_create_files_for_prset.R,Create PLINK/PRSet keep phenotype and covariate files
+prs,PRSetTesting.R,scripts/documented/prs/PRSetTesting.R,scripts/refactored/prs/02_prset_testing.R,Test axis-specific PRS scores against transcriptomic axes
+eqtl,ciseQTLTesting.R,scripts/documented/eqtl/ciseQTLTesting.R,scripts/refactored/eqtl/01_cct2_cis_eqtl.R,CCT2 cis-eQTL testing and ALS GWAS overlap check
+genomics,DEGBurdenTesting.R,scripts/documented/genomics/DEGBurdenTesting.R,scripts/refactored/genomics/04_deg_burden_testing.R,Rare burden enrichment in subtype-defining DEGs and NfL burden decomposition
+genomics,tric_burden.R,scripts/documented/genomics/tric_burden.R,scripts/refactored/genomics/05_tric_burden.R,Targeted rare burden analysis for CCT2 and TRiC complex genes
+genomics,TRICBurdenMYCBurden.R,scripts/documented/genomics/TRICBurdenMYCBurden.R,scripts/refactored/genomics/06_myc_burden.R,MYC target rare burden follow-up for CCT2/TRiC trans-regulatory hypothesis

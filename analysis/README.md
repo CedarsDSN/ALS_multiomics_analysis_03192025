@@ -1,176 +1,75 @@
-**Analysis Strategy**
-=====================
+# Analysis folder
 
-## Fast, intermediate, and slow progressors
-===========================================
+This folder is the analysis logbook for the ALS multi-omics project.
 
-### Categorizing patients into fast, intermediate, and slow progressors
+Per the repository convention, all analysis details should live here, not only in commit messages or scattered notes. Each subfolder represents a distinct batch of analysis. A batch may be a single analysis script, a related group of scripts, or a complete analysis theme such as proteomics or genomics.
 
-#### I. Analysis Script:
+## Folder convention
 
-#### 1. Use ALSFRS-R score and disease onset to derive the ALS progression and categorize patients
+```text
+analysis/
+├── README.md
+├── ANALYSIS_INDEX.md
+├── _template/
+│   └── analysis_record_template.md
+├── batch_01_transcriptomics_progression/
+├── batch_02_familial_c9_sod1_convergence/
+├── batch_03_axis_scoring_sporadic_subtyping/
+├── batch_04_validation_classifier_ipa/
+├── batch_05_proteomics/
+└── batch_06_genomics_prs_eqtl/
+```
 
-Required Packages/Software:
+## What each batch README should contain
 
- - pandas package in python
+Each batch folder should document:
 
-**Scripts and Inputs:**
-- **[calculate_progression.py](/scripts/calculate_progression.py)**
-  - **Inputs:**
-    - ALSFRS-R scores [ALSFRS-R.csv]([categorization/inputs/ALSFRS_R.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EWl4zvRFR-JMvP-1DT5kiuwBhfpotcen3auND6idn5pD1w?e=b8fITO)),
-    - [Demographics.csv]([categorization/inputs/Demographics.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/Ef2tE3ubpJFBpvnMeSTqN-4BOhWaLvKDM8jCsUwhBP8ugQ?e=xBcKTJ)),
-    - [aals_dataportal_datatable.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EcE8vKKtA4tMrSFxlf1OT88BqookAcbpdddQDFl0F3-HPA?e=0E6QEq)
-  - **Description:** Generates a table [ALS_Progression_Rates_Full.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EZbvYjke7btKnjSTa4B7_0gBcwILF9yv37OA62sn062Smw?e=cWH4kK) which contains a column Progressor_Class which categorizes patients into fast, slow and intermediate progressors and a plot showing the distribution of patients into the three classes.
- 
-#### II. Process
-**Deriving the ALSFRS-R Progression Rate**
-   - Merged visit-wise ALSFRS-R scores, demographic information (including date of birth), and baseline clinical metadata to reconstruct a full disease timeline. The script identifies each patient’s latest ALSFRS-R visit, computes disease duration (from symptom onset to latest visit), and calculates the monthly rate of functional decline.
-   - Filtered out healthy controls and patients with unreliable follow-up (e.g., only baseline visit, negative or too-short disease durations).
-   - Performed a consistency check between the recorded ALSFRS-R latest values and those computed from visit-level data.
-  
-#### III. Results
-The table [ALS_Progression_Rates_Full.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EZbvYjke7btKnjSTa4B7_0gBcwILF9yv37OA62sn062Smw?e=cWH4kK) has the categorization of patients into slow, fast and intermediate progressors.
+```text
+Purpose
+Question being asked
+Scripts used
+Inputs
+Outputs
+Upstream dependencies
+How to run
+Run status
+Main findings
+Quality-control notes
+Known limitations
+Next steps
+```
 
+Use `analysis/_template/analysis_record_template.md` when creating new analysis batches.
 
+## What belongs in analysis/
 
-## Differential Expression Between Fast, Intermediate and Slow ALS Progressors
+Commit these when they do not expose controlled data:
 
-### Preparing Expression Data and Running DESeq2 Analysis
+```text
+README files
+run notes
+analysis decisions
+non-sensitive summary tables
+workflow diagrams
+small aggregate plots cleared for sharing
+batch-level interpretation notes
+```
 
-#### I. Analysis Script:
+Do not commit these unless explicitly cleared:
 
-#### 1. Filter and process raw RNA-seq count matrix, merge with progression metadata, and run DESeq2
+```text
+raw AnswerALS data
+patient-level metadata
+sample-level clinical tables
+count matrices
+protein matrices
+genotype files
+large generated outputs
+patient-level RDS objects
+```
 
-Required Packages/Software:
+Generated results should usually be written to `analysis/<batch>/results/` or `results/`, but those paths are ignored by Git by default. If a small summary output is safe to include, move it into the batch README or a clearly named summary file after checking that it contains no protected patient-level information.
 
- - R (≥4.2), bioconductor packages: DESeq2, pheatmap, CRAN packages: tidyverse, RColorBrewer
+## Batch index
 
-**Scripts and Inputs:**
-- **[als_gene_expression_analysis.R](../scripts/als_gene_expression_analysis.R)**
-  - **Inputs:**
-    - Raw count matrix shared on OneDrive: [AnswerALS-651-T-v1-release6_raw-counts.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EQRkvr_HBXdKlbJ8hm4MXF8B8BQWaMthoJ_hF4xoQGjyZA?email=Zhiping.Wang%40cshs.org&e=99X2zT))
-    - Progression metadata: [ALS_Progression_Rates_Full.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EZbvYjke7btKnjSTa4B7_0gBcwILF9yv37OA62sn062Smw?e=cWH4kK)
-    - Sample mapping file: [Sample_Mapping_File_Feb_2024.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EWxaboowXe1Iu4yAoNn8aMUBaQ9W92lsduqsOfY84TllXA?e=VGrngK)
-  - **Description:** This script performs PCA using variance-stabilized expression (VST), checks for batch effects, tests clinical confounders against major principal components, filters genes, and runs differential gene expression analysis using DESeq2 between fast, slow, and intermediate ALS progressors. The script also generates plots for PCA and batch visualization.
-
----
-
-#### II. Process
-
-**Preprocessing and Confounder Screening**
-   - Merged raw gene count matrix with ALS progression metadata and sample mapping information.
-   - Removed BDC and BTC samples to retain only biologically relevant ALS samples.
-   - Performed variance-stabilizing transformation (VST) and conducted PCA on:
-     - All genes
-     - Top 500 most variable genes
-   - Merged PCA results with clinical metadata and ran linear models to test whether clinical covariates explain PC1 and PC2. Four variables were tested - Age at symptom onset, Sex, Site of onset, Race
-   - Found that:
-     - **RACE** significantly explains PC1 and was included in the final model
-     - **Progressor_Class** modestly explains PC2 only when using all genes (p ≈ 0.02)
-     - No significant batch effects observed
-
-**Differential Gene Expression Analysis**
-   - Filtered out genes that have row sum less than 10.
-   - Design formula used in DESeq2:
-     ```r
-     design(dds) <- ~ RACE + Progressor_Class
-     ```
-   - DESeq2 was run to detect genes differentially expressed between Fast and Slow ALS progressors, with RACE adjusted as a covariate.
-
----
-
-#### III. Results
-
-The following output files were generated by the script:
-
-| Output File                                     | Description                                                           |
-|------------------------------------------------|-----------------------------------------------------------------------|
-| [PCA_batch.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/Ebyco_icOuVHolLXUVwdkEYBc8Uzwjo5hfAOS2EpQ5NjuQ?e=vA79eM) | PCA plot colored by batch (top 500 genes) to verify absence of batch effects |
-| [PCA_ProgressorClass_PC1PC2.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/EZcvI_h10XpLiXuwD4BzajkBBSYNMJMRmo-j4dqRSZiYVQ?e=cn0QpB) | PCA plot showing PC1 vs PC2                       |
-| [confounder_screening_results_top500.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EY5ZQlyHV2tDjb-dnFrHqmEBoPl0L9gQW2fC48tpUR1gyw?e=EKjCOc) | ANOVA p-values showing which clinical variables associate with PCs    |
-
-
-## Separation of patients into Case and Control
-================================================
-
-#### I. Analysis Script:
-
-#### 1. Check PC1 and PC2 to seperate Case and Healthy Control
-
-Required Packages/Software:
-
- - DESeq2, ggplot2, readr, tidyr, tidyverse, dplyr, edgeR, matrixStats, biomaRt
-
-**Scripts and Inputs:**
-- **[SeperateCaseAndHealthyControls.R](/scripts/SeperateCaseAndHealthyControls.R)**
-  - **Inputs:**
-    - Raw count matrix shared on OneDrive: [AnswerALS-651-T-v1-release6_raw-counts.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EQRkvr_HBXdKlbJ8hm4MXF8B8BQWaMthoJ_hF4xoQGjyZA?email=Zhiping.Wang%40cshs.org&e=99X2zT))
-    - Clinical tables [Tables folder](https://cedarssinai-my.sharepoint.com/:f:/g/personal/zhiping_wang_cshs_org/EhKn3iUgX09Ms52oNbH10jsBkNfN-yf08guXy6PjpJ_aKQ?e=Aj90hx),
-    - Participants Information [aals_participants.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EdFdY7-Nng5PsWsF519FWzkBhxwlWIJ7t4kQL6qMZmhY4A?e=narnzQ)
-    - Sample mapping file [Sample_Mapping_File_Feb_2024.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EWxaboowXe1Iu4yAoNn8aMUBaQ9W92lsduqsOfY84TllXA?e=LwbQgO)
-    - Binary variables file [binary_variable.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EccZ_F21scpDhTzFyCRzGa4BRlnAhWFM5jjcJSPitpQuuw?e=zYpObg)
-  - **Description:** Creates PCA plots to separate patients who are cases and healthy controls. It also outputs PCA plots for lower-dimensional PCs. In the second update to the script, two functions were used to compare the PCA pattern - plotPCA function from DESeq2 and prcomp function from the matrixStats package. The PCA was carried out with both functions with the top 500 variable genes, top 1000 variable genes, and all genes. Batch effects were visualized with the top 500 variable genes and all genes. A different normalization method which is the logCPM normalization using the edgeR package. A more stringent filtering was also carried out to check if that would change the pattern. To show empirical evidence to see that the top 500 variable genes shows the most variability, a cumulative variance plot was plotted. Differential expression analysis was carried out using sex as a covariate. Next, the top loadings of PC1 and PC2 were inspected to check what these genes correspond to. An analysis was carried out, removing the sex chromosome genes, after which the PC1 vs PC2 plot was plotted again to see the effect of removing sex chromosome genes. Finally, the clinical variables were used to conduct an association study with top loadings of PC1 and PC2. 
- 
-#### II. Process
-** Preprocessing
-- Merged RNA-seq count data with participant metadata and sample IDs.
-- Created `DESeqDataSet`, filtered low-count genes, and applied variance-stabilizing transformation (VST).
-- Generated PCA plots using:
-  - All genes (n ≈ 50k)
-  - Top 500 most variable genes
-  - edgeR logCPM-normalized matrix
-
-** Confounder Screening
-- Colored PCA plots by:
-  - Case/Control status
-  - Biological Sex
-  - Batch
-- Observed separation by **sex** in PC1–PC2 space.
-- Explored whether sex chromosome genes (chrX/chrY) caused this pattern.
-
-** Sex Chromosome Filtering
-- Identified top 20 gene loadings for PC1 and PC2.
-- Used `biomaRt` to annotate chromosome locations.
-- Observed enrichment of chrY genes in top PCA contributors.
-- Re-ran PCA after removing chrX and chrY genes.
-- Result: **Sex-based separation disappeared**, confirming sex chromosome influence.
-
-** Association Testing (PCA vs Metadata)
-- Loaded 279 binary variables across 35 clinical tables.
-- Mapped `Participant_ID` to each variable.
-- Used linear models (or ANOVA for categorical variables) to test the association of each variable with PC1 and PC2.
-- Ranked results by minimum p-value and plotted the top 15 associations.
-  
-#### III. Results
- III. Output Files
-Note - There are many files outputted by this script which are uploaded [here in OneDrive](https://cedarssinai-my.sharepoint.com/:f:/g/personal/zhiping_wang_cshs_org/EitmyWhxHM1CoeEyv0D5PcsBuQwMyywVDshlbX1EQVtugg?e=b60r5d). Below are the main results. 
-| File | Description |
-|------|-------------|
-| [PC1vsPC2_casevscontrol.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/EX1t33-fycpNvn0MR6f63foBneiIFt9a2vPB0561LVPvag?e=J3ocD3) | PCA plot by Case/Control |
-| [PC1vsPC2_sex_all_genes.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/ERBjgSQD2H1OrB__4d1aV4oBi8piAqN5qjG2MGbo7rRndg?e=G0dhKO) | PCA plot by Sex (all genes) |
-| [PC1vsPC2_prcomp_500_colored_sex.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/Eba2MO6mP3JGq_Tf8s1Aa8sBTLA5PxtJi5ujW5MXMnR1og?e=FgeYBt) | PCA by Sex (top 500 genes) |
-| [PC1vsPC2_no_sex_chromosomes.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/EUbW5Y5rVvhOrcyuLURGmGIBECh_vEx2jEAaEoeuquFUUQ?e=w51ns0) | PCA without chrX/Y genes |
-| [PCA_Top500_Variable_Genes_edgeR_logCPM.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/EQrVwGwYV8FBgdS7t3XgFfcBB-YSOf0eCskhOZZMZAz0ZA?e=AU4B0W) | PCA with edgeR logCPM |
-| [Top_15_Variable_Associations_PCA.pdf](https://cedarssinai-my.sharepoint.com/:b:/g/personal/zhiping_wang_cshs_org/Ecjti3la9J1OhRVozHYAa7oBfL2x891FYudfyJifLR2fMA?e=BWP9pX) | Barplot of top 15 clinical associations |
-| [PCA_PC1_PC2_variable_associations.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EQYuwsWWlqJMvZSlCN_oBo4BxMBg7Yd0_CeZrWMNy5KyvQ?e=j4eiVx) | Full association results table |
-
-
-- ### **[get_binary_variables.R](/scripts/get_binary_variables.R)**
-  - **Inputs:**
-    - Clinical dictionary file [Clinical_Dictionary_v3_2024.csv](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EQdazhYgd_xCgZ7JXy1akO4B0HA35kSjciPbKHQ7wOSB_w?e=0ru9ov)
-  - **Description:** Extracts the binary columns from the set of all columns. 
- 
-#### II. Process
-**Extracting all Binary variables**
-   - Cleans the Values column of the dictionary.
-   - Extracts numeric codes from formatted strings like "1, Yes | 2, No" or "0, No | 1, Yes".
-   - Counts unique numeric codes per variable.
-   - Filters for variables that are:
-     * Numeric, and
-     * Have exactly 2 distinct response options (e.g., Yes/No).
-  
-#### III. Results
-A [table](https://cedarssinai-my.sharepoint.com/:x:/g/personal/zhiping_wang_cshs_org/EccZ_F21scpDhTzFyCRzGa4BRlnAhWFM5jjcJSPitpQuuw?e=zYpObg) listing all binary clinical variables across forms, including their form name, field name, label, and value coding.
-
-
-
+See `analysis/ANALYSIS_INDEX.md` for the current batch list and script mapping.
