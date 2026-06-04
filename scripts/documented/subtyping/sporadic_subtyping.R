@@ -3,7 +3,7 @@
 # Project: ALS multi-omics analysis
 # Source status: documented/sanitized for GitHub handoff
 # ============================================================
-# Documentation summary from docs/SCRIPT_SPECS_FULL.md
+# Documentation summary from scripts/README.md
 # 
 # ## `sporadic_subtyping.R`
 # 
@@ -44,7 +44,7 @@
 # Refactored command-line version:
 # 
 # ```bash
-# Rscript scripts/refactored/subtyping/01_sporadic_subtyping.R --config config/config.yml --base-dir /path/to/private/ALS --outdir results/subtyping/01_sporadic_subtyping --objects outputs/objects/axis_scoring_objects.rds,outputs/objects/sporadic_subtyping_objects.rds
+# Rscript scripts/refactored/subtyping/01_sporadic_subtyping.R --config config/config.yml --base-dir /path/to/private/ALS --outdir analysis/batch_03_axis_scoring_sporadic_subtyping/results/sporadic_subtyping --objects analysis/batch_03_axis_scoring_sporadic_subtyping/objects/03_axis_scoring_objects.rds,analysis/batch_03_axis_scoring_sporadic_subtyping/objects/01_sporadic_subtyping_objects.rds
 # ```
 # 
 # **Refactor notes**

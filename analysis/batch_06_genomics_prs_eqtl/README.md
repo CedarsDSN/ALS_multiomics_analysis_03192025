@@ -146,7 +146,7 @@ Rscript scripts/refactored/genomics/02_genomic_analysis.R \
   --config config/config.yml \
   --base-dir /path/to/private/ALS \
   --outdir analysis/batch_06_genomics_prs_eqtl/results/genomic_analysis \
-  --objects outputs/objects/03_axis_scoring_objects.rds,outputs/objects/01_sporadic_subtyping_objects.rds
+  --objects analysis/batch_03_axis_scoring_sporadic_subtyping/objects/03_axis_scoring_objects.rds,analysis/batch_03_axis_scoring_sporadic_subtyping/objects/01_sporadic_subtyping_objects.rds
 ```
 
 Genomic stratification:
@@ -165,7 +165,7 @@ Rscript scripts/refactored/prs/01_create_files_for_prset.R \
   --config config/config.yml \
   --base-dir /path/to/private/ALS \
   --outdir analysis/batch_06_genomics_prs_eqtl/results/prset_files \
-  --objects outputs/objects/03_axis_scoring_objects.rds
+  --objects analysis/batch_03_axis_scoring_sporadic_subtyping/objects/03_axis_scoring_objects.rds
 ```
 
 Test PRSet/PRS associations:
@@ -175,7 +175,7 @@ Rscript scripts/refactored/prs/02_prset_testing.R \
   --config config/config.yml \
   --base-dir /path/to/private/ALS \
   --outdir analysis/batch_06_genomics_prs_eqtl/results/prset_testing \
-  --objects outputs/objects/03_axis_scoring_objects.rds
+  --objects analysis/batch_03_axis_scoring_sporadic_subtyping/objects/03_axis_scoring_objects.rds
 ```
 
 CCT2 cis-eQTL:
@@ -185,7 +185,7 @@ Rscript scripts/refactored/eqtl/01_cct2_cis_eqtl.R \
   --config config/config.yml \
   --base-dir /path/to/private/ALS \
   --outdir analysis/batch_06_genomics_prs_eqtl/results/cct2_cis_eqtl \
-  --objects outputs/objects/03_axis_scoring_objects.rds,outputs/objects/01_sporadic_subtyping_objects.rds
+  --objects analysis/batch_03_axis_scoring_sporadic_subtyping/objects/03_axis_scoring_objects.rds,analysis/batch_03_axis_scoring_sporadic_subtyping/objects/01_sporadic_subtyping_objects.rds
 ```
 
 DEG burden:
@@ -195,7 +195,7 @@ Rscript scripts/refactored/genomics/04_deg_burden_testing.R \
   --config config/config.yml \
   --base-dir /path/to/private/ALS \
   --outdir analysis/batch_06_genomics_prs_eqtl/results/deg_burden \
-  --objects outputs/objects/03_axis_scoring_objects.rds,outputs/objects/01_sporadic_subtyping_objects.rds
+  --objects analysis/batch_03_axis_scoring_sporadic_subtyping/objects/03_axis_scoring_objects.rds,analysis/batch_03_axis_scoring_sporadic_subtyping/objects/01_sporadic_subtyping_objects.rds
 ```
 
 TRiC burden:
@@ -205,7 +205,7 @@ Rscript scripts/refactored/genomics/05_tric_burden.R \
   --config config/config.yml \
   --base-dir /path/to/private/ALS \
   --outdir analysis/batch_06_genomics_prs_eqtl/results/tric_burden \
-  --objects outputs/objects/03_axis_scoring_objects.rds,outputs/objects/01_sporadic_subtyping_objects.rds
+  --objects analysis/batch_03_axis_scoring_sporadic_subtyping/objects/03_axis_scoring_objects.rds,analysis/batch_03_axis_scoring_sporadic_subtyping/objects/01_sporadic_subtyping_objects.rds
 ```
 
 MYC-target burden:
@@ -215,7 +215,7 @@ Rscript scripts/refactored/genomics/06_myc_burden.R \
   --config config/config.yml \
   --base-dir /path/to/private/ALS \
   --outdir analysis/batch_06_genomics_prs_eqtl/results/myc_burden \
-  --objects outputs/objects/03_axis_scoring_objects.rds,outputs/objects/01_sporadic_subtyping_objects.rds
+  --objects analysis/batch_03_axis_scoring_sporadic_subtyping/objects/03_axis_scoring_objects.rds,analysis/batch_03_axis_scoring_sporadic_subtyping/objects/01_sporadic_subtyping_objects.rds
 ```
 
 ## Run record

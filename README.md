@@ -17,9 +17,6 @@ Additional support folders were added for reproducibility:
 ```text
 config/        Example configuration file. The real config/config.yml stays local.
 R/             Shared helper functions for refactored R scripts.
-docs/          Cross-script documentation, run order, object handoff contracts, and script specs.
-outputs/       Placeholder for generated object handoffs; ignored by Git.
-results/       Placeholder for generated results; ignored by Git.
 .github/       Basic repository smoke-test workflow.
 ```
 
@@ -78,9 +75,6 @@ ALS_multiomics_project/
 │   └── config.example.yml
 ├── R/
 │   └── project_io.R
-├── docs/
-├── outputs/
-└── results/
 ```
 
 ## Analysis batches
@@ -135,7 +129,7 @@ Rscript scripts/refactored/subtyping/01_sporadic_subtyping.R \
   --config config/config.yml \
   --base-dir /path/to/private/ALS \
   --outdir analysis/batch_03_axis_scoring_sporadic_subtyping/results/sporadic_subtyping \
-  --objects outputs/objects/03_axis_scoring_objects.rds
+  --objects analysis/batch_03_axis_scoring_sporadic_subtyping/objects/03_axis_scoring_objects.rds
 ```
 
 ## Data safety
@@ -163,10 +157,10 @@ The `.gitignore` is configured to keep `large_data/` as an empty placeholder and
 ```text
 analysis/ANALYSIS_INDEX.md             Batch-level analysis index.
 scripts/ALL_SCRIPTS_USED.csv           Script inventory.
-docs/SCRIPT_SPECS_FULL.md              Purpose, inputs, outputs, dependencies, and run command for every script.
-docs/RUN_ORDER_AND_DAG.md              Suggested execution order.
-docs/OBJECT_HANDOFF_CONTRACTS.md       Shared intermediate object contracts.
-docs/REFACTORED_PATCH_REPORT.md        Summary of refactoring changes.
+scripts/README.md              Purpose, inputs, outputs, dependencies, and run command for every script.
+analysis/ANALYSIS_INDEX.md              Suggested execution order.
+analysis/ANALYSIS_INDEX.md       Shared intermediate object contracts.
+scripts/README.md        Summary of refactoring changes.
 SECURITY_AND_DATA_POLICY.md            Data safety policy.
 PUBLISH_TO_GITHUB.md                   GitHub publishing instructions.
 ```

@@ -130,7 +130,7 @@ Rscript scripts/refactored/subtyping/01_sporadic_subtyping.R \
   --config config/config.yml \
   --base-dir /path/to/private/ALS \
   --outdir analysis/batch_03_axis_scoring_sporadic_subtyping/results/sporadic_subtyping \
-  --objects outputs/objects/03_axis_scoring_objects.rds
+  --objects analysis/batch_03_axis_scoring_sporadic_subtyping/objects/03_axis_scoring_objects.rds
 ```
 
 ## Run record

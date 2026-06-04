@@ -3,7 +3,7 @@
 # Project: ALS multi-omics analysis
 # Source status: documented/sanitized for GitHub handoff
 # ============================================================
-# Documentation summary from docs/SCRIPT_SPECS_FULL.md
+# Documentation summary from scripts/README.md
 # 
 # ## `genomic_stratification.R`
 # 
@@ -46,7 +46,7 @@
 # Refactored command-line version:
 # 
 # ```bash
-# Rscript scripts/refactored/genomics/03_genomic_stratification.R --config config/config.yml --base-dir /path/to/private/ALS --outdir results/genomics/03_genomic_stratification
+# Rscript scripts/refactored/genomics/03_genomic_stratification.R --config config/config.yml --base-dir /path/to/private/ALS --outdir analysis/batch_06_genomics_prs_eqtl/results/genomic_stratification
 # ```
 # 
 # **Refactor notes**

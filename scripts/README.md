@@ -47,4 +47,4 @@ Upstream dependencies
 How to run
 ```
 
-Full script-level details are also maintained in `docs/SCRIPT_SPECS_FULL.md`.
+Full script-level details are also maintained in `scripts/README.md`.

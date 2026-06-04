@@ -3,7 +3,7 @@
 # Project: ALS multi-omics analysis
 # Source status: documented/sanitized for GitHub handoff
 # ============================================================
-# Documentation summary from docs/SCRIPT_SPECS_FULL.md
+# Documentation summary from scripts/README.md
 # 
 # ## `C9SOD1Convergence.R`
 # 
@@ -47,7 +47,7 @@
 # Refactored command-line version:
 # 
 # ```bash
-# Rscript scripts/refactored/transcriptomics/02_c9_sod1_convergence.R --config config/config.yml --base-dir /path/to/private/ALS --outdir results/transcriptomics/02_c9_sod1_convergence
+# Rscript scripts/refactored/transcriptomics/02_c9_sod1_convergence.R --config config/config.yml --base-dir /path/to/private/ALS --outdir analysis/batch_02_familial_c9_sod1_convergence/results/c9_sod1_convergence
 # ```
 # 
 # **Refactor notes**

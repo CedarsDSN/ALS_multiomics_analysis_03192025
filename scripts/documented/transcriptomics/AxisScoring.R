@@ -3,7 +3,7 @@
 # Project: ALS multi-omics analysis
 # Source status: documented/sanitized for GitHub handoff
 # ============================================================
-# Documentation summary from docs/SCRIPT_SPECS_FULL.md
+# Documentation summary from scripts/README.md
 # 
 # ## `AxisScoring.R`
 # 
@@ -43,7 +43,7 @@
 # Refactored command-line version:
 # 
 # ```bash
-# Rscript scripts/refactored/transcriptomics/03_axis_scoring.R --config config/config.yml --base-dir /path/to/private/ALS --outdir results/transcriptomics/03_axis_scoring
+# Rscript scripts/refactored/transcriptomics/03_axis_scoring.R --config config/config.yml --base-dir /path/to/private/ALS --outdir analysis/batch_03_axis_scoring_sporadic_subtyping/results/axis_scoring
 # ```
 # 
 # **Refactor notes**

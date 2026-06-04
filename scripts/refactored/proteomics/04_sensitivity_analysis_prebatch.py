@@ -21,7 +21,7 @@
 #
 # How to run:
 #   - Current: edit `BASE_DIR`, then run `python sensitivity_analysis_prebatch.py`.
-#   - Refactored target included in this package: `python scripts_refactored/sensitivity_analysis_prebatch_argparse.py --prebatch <file> --postbatch <file> --subtypes <csv> --outdir results/proteomics/DE_analysis`.
+#   - Refactored target included in this package: `python scripts_refactored/sensitivity_analysis_prebatch_argparse.py --prebatch <file> --postbatch <file> --subtypes <csv> --outdir analysis/batch_05_proteomics/results/prebatch_sensitivity`.
 # ============================================================
 
 #!/usr/bin/env python3

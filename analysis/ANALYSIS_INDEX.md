@@ -28,4 +28,4 @@ The strongest dependency chain is:
 AxisScoring.R -> sporadic_subtyping.R -> SensitivityAnalysis.R / LassoClassifier.R / IPAPrepare.R / PRSetTesting.R / ciseQTLTesting.R / DEGBurdenTesting.R
 ```
 
-For full object-level dependencies, see `docs/OBJECT_HANDOFF_CONTRACTS.md`.
+For full object-level dependencies, see `analysis/ANALYSIS_INDEX.md`.
