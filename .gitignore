@@ -1,1 +1,85 @@
-large_data
+# Private configuration and credentials
+config/config.yml
+.env
+.Renviron
+.Rprofile
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Keep the existing large_data folder as a placeholder only.
+# Do not commit controlled-access AnswerALS data or local data copies.
+large_data/*
+!large_data/.gitkeep
+!large_data/README.md
+
+# Raw / protected ALS data and local exports
+raw_data/
+private_data/
+answerals/
+metadata/clinical/
+transcriptomics/4_matrix/
+proteomics/4_matrix/
+vcf/
+*.vcf
+*.vcf.gz
+*.bcf
+*.bam
+*.bai
+*.cram
+*.crai
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bed
+*.bim
+*.fam
+*.pgen
+*.pvar
+*.psam
+*.raw
+
+# Generated results and large intermediate objects
+results/**
+outputs/**
+figures/**
+plots/**
+analysis/**/results/**
+analysis/**/outputs/**
+analysis/**/figures/**
+*.rds
+*.RData
+*.Rda
+*.h5
+*.h5ad
+*.loom
+*.parquet
+*.feather
+*.tsv.gz
+*.csv.gz
+
+# Keep placeholder READMEs in ignored directories
+!results/README.md
+!outputs/README.md
+!outputs/objects/README.md
+!analysis/**/results/README.md
+!analysis/**/outputs/README.md
+!analysis/**/figures/README.md
+
+# R / Python local artifacts
+.Rhistory
+.Rproj.user/
+renv/library/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
